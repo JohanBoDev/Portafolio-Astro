@@ -1,0 +1,27 @@
+---
+const { titulo, descripcion, imagen, enlace } = Astro.props;
+---
+
+<a
+  href={enlace}
+  target="_blank"
+  class="flex flex-col h-full overflow-hidden rounded-lg shadow-[rgba(255,255,255,0.15)_0px_0px_15px,rgba(255,255,255,0.2)_0px_0px_30px]"
+>
+  <article>
+    <div class="overflow-hidden">
+      <img
+        src={imagen}
+        alt={titulo}
+        class="w-full h-[244px] object-cover transition-transform duration-300 hover:scale-105"
+      />
+    </div>
+    <div class="bg-black bg-opacity-75 text-white p-4 w-full">
+      <h3 class="font-extrabold tracking-wider underline decoration-wavy text-lg titulo_proyectos">
+        {titulo}
+      </h3>
+      <p class="text-sm tracking-wider">
+        {descripcion}
+      </p>
+    </div>
+  </article>
+</a>

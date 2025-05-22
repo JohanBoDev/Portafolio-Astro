@@ -1,0 +1,358 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProyectoDestacado from "../components/ProyectoDestacado.astro";
+import Iconos from "../components/Iconos.astro";
+import BotonVolver from "../components/BotonVolver.astro";
+---
+
+<Layout>
+  <main class="container px-4 sm:px-6 lg:px-12 mt-20">
+    <BotonVolver />
+    <section class="text-center mb-8 mt-10">
+      <h2 class="text-2xl md:text-3xl font-bold titulo_proyectos">
+        Todos los Proyectos
+      </h2>
+      <p
+        class="text-center m-1 mt-5 text-lg md:text-xl font-semibold text-gray-100 mb-6"
+      >
+        <span class="from-gray-100 to-gray-400 text-white bg-clip-text">
+          Explora cada uno de mis trabajos
+        </span>
+        y descubre cómo transformo
+        <span class="underline decoration-wavy decoration-gray-400">ideas</span>
+        en
+        <span
+          class="bg-gray-300 titulo_proyectos px-1 py-0.5 rounded-lg text-gray-900"
+        >
+          experiencias interactivas
+        </span>.
+      </p>
+    </section>
+
+    <!-- Filtros -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 px-4">
+      <!-- Input -->
+      <input
+        id="buscador"
+        type="text"
+        placeholder="Buscar por nombre o tecnología..."
+        class="p-2 border rounded bg-black text-white placeholder:text-gray-400"
+      />
+
+      <!-- Select -->
+      <select id="filtroTipo" class="p-2 border rounded bg-181a1f text-white">
+        <option value="">Todos</option>
+        <option value="FullStack">Full Stack</option>
+        <option value="Landing">Landing Page</option>
+        <option value="prueba-tecnica">Prueba Técnica</option>
+        <option value="backend">Backend</option>
+        <option value="frontend">Frontend</option>
+      </select>
+
+      <!-- Íconos ocupan ambas columnas -->
+      <div
+        id="iconosTecnologia"
+        class="col-span-1 md:col-span-2 flex flex-wrap gap-3 mt-4"
+      >
+        {
+          [
+            "react",
+            "tailwind",
+            "node",
+            "express",
+            "mysql",
+            "mongo",
+            "firebase",
+            "nest",
+            "azure",
+            "astro",
+            "html",
+            "css",
+            "javascript",
+            "php",
+            "ubuntu",
+            "docker",
+            "Java",
+            "postgresql",
+            "postman",
+          ].map((tec) => (
+            <button
+              type="button"
+              class="icono-tec  text-white rounded-full p-3 border-2 border-black transition-all duration-200 ease-in-out"
+              data-tecnologia={tec}
+              aria-label={tec}
+              title={tec}
+            >
+              <Iconos nombre={tec} tamaño={32} />
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Grid de Proyectos -->
+    <div
+      id="proyectosContainer"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6"
+    >
+      <div
+        data-titulo="comunitech"
+        data-tecnologias="react tailwind node express mysql"
+        data-tipo="FullStack"
+      >
+        <ProyectoDestacado
+          titulo="Comunitech"
+          descripcion="Tienda online especializada en la compra y venta de componentes de PC."
+          imagen="assets/img/comunitechBanner.webp"
+          enlace="/proyectos/comunitech"
+        />
+      </div>
+
+      <div
+        data-titulo="nocaima"
+        data-tecnologias="html css javascript tailwind"
+        data-tipo="Landing"
+      >
+        <ProyectoDestacado
+          titulo="Nocaima"
+          descripcion="Landing page que muestra la cultura, turismo e historia del municipio de Nocaima, Cundinamarca."
+          imagen="assets/img/nocaimaBanner.webp"
+          enlace="/proyectos/nocaima"
+        />
+      </div>
+
+      <div
+        data-titulo="finanzi"
+        data-tecnologias="react node express mongo tailwind"
+        data-tipo="FullStack"
+      >
+        <ProyectoDestacado
+          titulo="FinanziWeb"
+          descripcion="Web para gestionar ahorros, calcular deudas, intereses, hipotecas e inversiones de manera sencilla e intuitiva."
+          imagen="assets/img/finanziBanner.webp"
+          enlace="/proyectos/finanzi"
+        />
+      </div>
+
+      <div
+        data-titulo="talentmatch"
+        data-tecnologias="react tailwind firebase nest azure"
+        data-tipo="FullStack"
+      >
+        <ProyectoDestacado
+          titulo="TalentMatch"
+          descripcion="Plataforma para reclutadores que optimiza la búsqueda y selección de talento con herramientas de inteligencia artificial."
+          imagen="assets/img/talentMatchBanner.webp"
+          enlace="/proyectos/talentMatch"
+        />
+      </div>
+
+      <div
+        data-titulo="b&y terrenos"
+        data-tecnologias="astro tailwind react"
+        data-tipo="Landing"
+      >
+        <ProyectoDestacado
+          titulo="B&Y Terrenos"
+          descripcion="LandingPage para una inmobiliaria que ofrece terrenos en venta y alquiler de fincas."
+          imagen="assets/img/b&yTerrenosBanner.webp"
+          enlace="/proyectos/by-terrenos"
+        />
+      </div>
+
+      <div
+        data-titulo="perfumes shesman"
+        data-tecnologias="astro tailwind react"
+        data-tipo="Landing"
+      >
+        <ProyectoDestacado
+          titulo="Perfumes Shesman"
+          descripcion="LandingPage para una tienda de perfumes que ofrece una amplia gama de fragancias."
+          imagen="assets/img/shesmanBanner.webp"
+          enlace="/proyectos/perfumeria-web"
+        />
+      </div>
+
+      <div
+        data-titulo="prueba técnica de react"
+        data-tecnologias="react tailwind"
+        data-tipo="prueba-tecnica"
+      >
+        <ProyectoDestacado
+          titulo="Prueba técnica de React"
+          descripcion="Aplicación web para gestionar productos, con funcionalidades de agregar, editar, eliminar productos y con un filtrado avanzado."
+          imagen="assets/img/pruebaReactBanner.webp"
+          enlace="/proyectos/prueba-tecnica-react"
+        />
+      </div>
+
+      <div
+        data-titulo="gestión de clientes en ubuntu"
+        data-tecnologias="php mysql ubuntu css docker"
+        data-tipo="backend"
+      >
+        <ProyectoDestacado
+          titulo="Gestión de Clientes en Ubuntu"
+          descripcion="Sistema CRUD en PHP y MySQL para administrar clientes en un entorno Ubuntu con Apache2."
+          imagen="assets/img/ubuntuCrudBanner.webp"
+          enlace="/proyectos/gestion-clientes-php"
+        />
+      </div>
+      <div
+        data-titulo="dogma Frontend"
+        data-tecnologias="react tailwind zustand jwt axios"
+        data-tipo="frontend"
+      >
+        <ProyectoDestacado
+          titulo="DOGMA Frontend"
+          descripcion="Interfaz web para gestionar entradas, separaciones, devoluciones y más, conectada al backend de inventario DOGMA."
+          imagen="assets/img/dogmafrontBanner.png"
+          enlace="/proyectos/dogma-frontend"
+        />
+      </div>
+      <div
+        data-titulo="dogma Backend"
+        data-tecnologias="node express mysql jwt docker"
+        data-tipo="backend"
+      >
+        <ProyectoDestacado
+          titulo="DOGMA Backend"
+          descripcion="API REST para gestionar inventarios en empresas, con control de roles, autenticación JWT y múltiples flujos operativos."
+          imagen="assets/img/dogmabackBanner.webp"
+          enlace="/proyectos/dogma-backend"
+        />
+      </div>
+      <div
+        data-titulo="climacheck"
+        data-tecnologias="html tailwind javascript css"
+        data-tipo="frontend"
+      >
+        <ProyectoDestacado
+          titulo="ClimaCheck"
+          descripcion="Aplicación visual del clima que muestra temperatura, humedad y viento en tiempo real usando OpenWeatherMap."
+          imagen="assets/img/ClimaCheck.webp"
+          enlace="/proyectos/climacheck"
+        />
+      </div>
+      <div
+        data-titulo="gestor de tareas"
+        data-tecnologias="react vite tailwind node express postgresql"
+        data-tipo="FullStack"
+      >
+        <ProyectoDestacado
+          titulo="Gestor de Tareas"
+          descripcion="App web para crear, editar y filtrar tareas por categorías, desarrollada con React y PostgreSQL."
+          imagen="assets/img/gestortareasBanner.png"
+          enlace="/proyectos/gestor-tareas"
+        />
+      </div>
+      <div
+        data-titulo="tutorlabs"
+        data-tecnologias="react tailwind javascript node express mysql jwt"
+        data-tipo="FullStack"
+      >
+        <ProyectoDestacado
+          titulo="TutorLabs"
+          descripcion="Plataforma para conectar estudiantes y tutores con gestión de sesiones, usuarios y asignaturas."
+          imagen="assets/img/TutorLabs.webp"
+          enlace="/proyectos/tutorlabs"
+        />
+      </div>
+      <div
+        data-titulo="crud usuarios java"
+        data-tecnologias="Java react javascript "
+        data-tipo="fullstack"
+      >
+        <ProyectoDestacado
+          titulo="CRUD Usuarios Java"
+          descripcion="Sistema de gestión de usuarios con frontend en React y backend en Java usando Hibernate."
+          imagen="assets/img/crudusuariosjavaBanner.png"
+          enlace="/proyectos/crud-usuarios-java"
+        />
+      </div>
+      <div data-titulo="api autenticacion de usuarios" data-tecnologias="node express mysql postman" data-tipo="api-rest">
+  <ProyectoDestacado
+    titulo="API Autenticación de Usuarios"
+    descripcion="API REST con registro, login, cifrado de contraseñas y autenticación JWT protegida con Bearer Token."
+    imagen="assets/img/autenticacionusuariosBanner.png"
+    enlace="/proyectos/autenticacion-usuarios"
+  />
+</div>
+
+
+      <div class="hidden border-sky-500 bg-sky-900 scale-105"></div>
+    </div>
+
+    <p id="sinResultados" class="text-center text-gray-400 mt-6 hidden">
+      No se encontraron proyectos con esos filtros.
+    </p>
+  </main>
+
+  <script>
+    const input = document.getElementById("buscador");
+    const filtroTipo = document.getElementById("filtroTipo");
+    const cards = document.querySelectorAll(
+      "#proyectosContainer [data-titulo]"
+    );
+    const botonesTec = document.querySelectorAll(".icono-tec");
+    let tecnologiasSeleccionadas = [];
+
+    function filtrar() {
+      const texto = input.value.toLowerCase();
+      const tipo = filtroTipo.value;
+
+      let resultadosVisibles = 0;
+
+      cards.forEach((card) => {
+        const titulo = card.dataset.titulo;
+        const tecnologias = card.dataset.tecnologias;
+        const tipoProyecto = card.dataset.tipo;
+
+        const coincideTexto =
+          titulo.includes(texto) || tecnologias.includes(texto);
+        const coincideTipo = tipo === "" || tipoProyecto === tipo;
+        const coincideTec =
+          tecnologiasSeleccionadas.length === 0 ||
+          tecnologiasSeleccionadas.some((tec) => tecnologias.includes(tec));
+
+        const mostrar = coincideTexto && coincideTipo && coincideTec;
+        card.style.display = mostrar ? "block" : "none";
+
+        if (mostrar) resultadosVisibles++;
+      });
+
+      // Mostrar u ocultar el mensaje según resultados
+      const mensaje = document.getElementById("sinResultados");
+      if (resultadosVisibles === 0) {
+        mensaje.classList.remove("hidden");
+      } else {
+        mensaje.classList.add("hidden");
+      }
+    }
+
+    function toggleTecnologia(btn) {
+      const tec = btn.dataset.tecnologia;
+      const index = tecnologiasSeleccionadas.indexOf(tec);
+
+      if (index > -1) {
+        // ya estaba seleccionada → quitar
+        tecnologiasSeleccionadas.splice(index, 1);
+        btn.classList.remove("icono-activo");
+      } else {
+        // no estaba → agregar
+        tecnologiasSeleccionadas.push(tec);
+        btn.classList.add("icono-activo");
+      }
+
+      filtrar();
+    }
+
+    // ✅ Esta parte es clave
+    botonesTec.forEach((btn) => {
+      btn.addEventListener("click", () => toggleTecnologia(btn));
+    });
+
+    input.addEventListener("input", filtrar);
+    filtroTipo.addEventListener("change", filtrar);
+  </script>
+</Layout>

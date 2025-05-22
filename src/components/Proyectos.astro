@@ -1,0 +1,106 @@
+---
+import ProyectoDestacado from "./ProyectoDestacado.astro";
+
+---
+
+<!-- Sección de Proyectos Destacados -->
+<section class="text-white py-12" id="proyectos">
+  <div class="text-center mb-8">
+    <h2 class="text-3xl font-bold titulo_proyectos">Proyectos Destacados</h2>
+    <p class="text-center m-1 mt-5 text-xl font-semibold text-gray-100 mb-6">
+      <span
+        class="inline-block text-gray-200 bg-gradient-to-r from-gray-100 to-gray-400 t bg-clip-text"
+      >
+        Descubre mi portafolio
+      </span>:
+      <span class="relative">
+        transformando
+        <span class="underline decoration-wavy decoration-gray-400">ideas</span>
+        en
+      </span>
+      <span class="relative">
+        <span
+          class="bg-gray-300 titulo_proyectos px-1 py-0.5 rounded-lg text-gray-900"
+          >experiencias interactivas</span
+        >
+      </span>
+      y funcionales.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6">
+    <!-- Proyecto Comunitech -->
+    <ProyectoDestacado
+      titulo="Comunitech"
+      descripcion="Tienda online especializada en la compra y venta de componentes de PC."
+      imagen="assets/img/comunitechBanner.webp"
+      enlace="/proyectos/comunitech"
+      
+    />
+    <!-- Proyecto Nocaima -->
+    <ProyectoDestacado
+      titulo="Nocaima"
+      descripcion="Landing page que muestra la cultura, turismo e historia del municipio de Nocaima, Cundinamarca."
+      imagen="assets/img/nocaimaBanner.webp"
+      enlace="/proyectos/nocaima"
+    />
+
+    <!-- Proyecto Finanzi -->
+    <ProyectoDestacado
+      titulo="FinanziWeb"
+      descripcion="Web para gestionar ahorros, calcular deudas, intereses, hipotecas e inversiones de manera sencilla e intuitiva."
+      imagen="assets/img/finanziBanner.webp"
+      enlace="/proyectos/finanzi"
+    />
+
+    <!-- Proyecto TalentMatch -->
+    <ProyectoDestacado
+      titulo="TalentMatch"
+      descripcion="Plataforma para reclutadores que optimiza la búsqueda y selección de talento con herramientas de inteligencia artificial."
+      imagen="assets/img/talentMatchBanner.webp"
+      enlace="/proyectos/talentMatch"
+    />
+
+    <!-- Proyecto B&Y Terrenos -->
+    <ProyectoDestacado
+      titulo="B&Y Terrenos"
+      descripcion="LandingPage para una inmobiliaria que ofrece terrenos en venta y alquiler de fincas."
+      imagen="assets/img/b&yTerrenosBanner.webp"
+      enlace="/proyectos/by-terrenos"
+    />
+
+    <!-- Proyecto Perfumes Shesman -->
+    <ProyectoDestacado
+      titulo="Perfumes Shesman"
+      descripcion="LandingPage para una tienda de perfumes que ofrece una amplia gama de fragancias."
+      imagen="assets/img/shesmanBanner.webp"
+      enlace="/proyectos/perfumeria-web"
+    />
+
+    <!-- Prueba tecnica de react -->
+    <ProyectoDestacado
+      titulo="Prueba técnica de React"
+      descripcion="Aplicación web para gestionar productos, con funcionalidades de agregar, editar, eliminar productos y con un filtrado avanzado."
+      imagen="assets/img/pruebaReactBanner.webp"
+      enlace="/proyectos/prueba-tecnica-react"
+    />
+
+    <!-- Ubuntu Clientes CRUD -->
+    <ProyectoDestacado
+      titulo="Gestión de Clientes en Ubuntu"
+      descripcion="Sistema CRUD en PHP y MySQL para administrar clientes en un entorno Ubuntu con Apache2."
+      imagen="assets/img/ubuntuCrudBanner.webp"
+      enlace="/proyectos/gestion-clientes-php"
+    />
+  </div>
+
+  <!-- Botón de Ver más proyectos -->
+  <div class="text-center mt-8">
+    <button
+      onclick="window.location.href='/Proyectos'"
+      class="button type1"
+    >
+      <span class="btn-txt">Ver más proyectos</span>
+    </button>
+  </div>
+</section>

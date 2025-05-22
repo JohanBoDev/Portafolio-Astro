@@ -1,0 +1,103 @@
+---
+import { proyectos } from "../../data/dataProyectos.js";
+import Layout from "../../layouts/Layout.astro";
+import Iconos from "../../components/Iconos.astro";
+import BotonVolver from "../../components/BotonVolver.astro";
+
+export async function getStaticPaths() {
+  return proyectos.map((proyecto) => ({
+    params: { slug: proyecto.slug },
+    props: { proyecto },
+  }));
+}
+
+const { proyecto } = Astro.props;
+---
+
+<Layout titulo={proyecto.titulo}>
+  <main
+    class="container relative md:h-screen flex justify-center items-center mx-auto mt-8 px-4 sm:px-6 md:px-10 lg:mt- lg:px-36"
+  >
+  <BotonVolver />
+    <div class="flex flex-col lg:flex-row shadow-lg rounded-lg overflow-hidden">
+      <!-- Texto a la izquierda -->
+      <div class="w-full lg:w-1/2 p-4 sm:p-6 md:p-8">
+        <h2
+          class="text-2xl sm:text-3xl lg:text-5xl titulo_proyectos font-semibold mb-4"
+        >
+          {proyecto.titulo}
+        </h2>
+        <p class="text-white md:text-lg text-base mb-4">
+          {proyecto.descripcion}
+        </p>
+        {
+          proyecto.descripcion2 && (
+            <p class="text-white md:text-lg text-base mb-4">
+              {proyecto.descripcion2}
+            </p>
+          )
+        }
+
+        <!-- Enlaces -->
+        <div class="flex flex-col mb-4">
+          <h3
+            class="text-white text-lg sm:text-xl mb-2 font-bold titulo_proyectos"
+          >
+            Enlaces:
+          </h3>
+          <div class="flex flex-wrap gap-4">
+            {
+              proyecto.github && (
+                <a
+                  href={proyecto.github}
+                  class="text-white"
+                  target="_blank"
+                  aria-label="Código fuente en GitHub"
+                >
+                  <Iconos nombre="github" tamaño={30} />
+                </a>
+              )
+            }
+            {
+              proyecto.demo && (
+                <a
+                  href={proyecto.demo}
+                  class="text-white"
+                  target="_blank"
+                  aria-label="Demo del proyecto"
+                >
+                  <Iconos nombre="chrome" tamaño={30} />
+                </a>
+              )
+            }
+          </div>
+        </div>
+
+        <!-- Tecnologías -->
+        <div class="mt-4">
+          <h3
+            class="text-white text-lg sm:text-xl mb-2 font-bold titulo_proyectos"
+          >
+            Tecnologías utilizadas:
+          </h3>
+          <div class="flex flex-wrap gap-5 mt-4">
+            {
+              proyecto.tecnologias.map((tec) => (
+                <Iconos nombre={tec} tamaño={36} />
+              ))
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Imagen a la derecha -->
+      <div class="w-full lg:w-1/2 max-h-[350px] lg:max-h-none">
+        <img
+          src={`/${proyecto.imagen}`}
+          alt={`Imagen de ${proyecto.titulo}`}
+          class="object-cover w-full h-full"
+        />
+      </div>
+    </div>
+  </main>
+</Layout>

@@ -1,22 +1,92 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+// src/layouts/Layout.astro
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO básico -->
+    <meta
+      name="description"
+      content="Portafolio profesional de Johan Bohorquez, desarrollador web especializado en React, Tailwind y sitios modernos."
+    />
+    <meta
+      name="keywords"
+      content="Johan Bohorquez, desarrollador web, frontend, portafolio, React, Tailwind, proyectos web"
+    />
+    <meta name="author" content="Johan Bohorquez" />
+
+    <!-- Open Graph para compartir en redes -->
+    <meta property="og:title" content="Portafolio de Johan Bohorquez" />
+    <meta
+      property="og:description"
+      content="Explora los proyectos y habilidades de Johan Bohorquez como desarrollador web."
+    />
+    <meta
+      property="og:image"
+      content="https://www.johanbodev.online/assets/johanDev.png"
+    />
+    <meta property="og:url" content="https://www.johanbodev.online/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Título en pestaña -->
+    <title>Portafolio | Johan Bohorquez - Desarrollador Web</title>
+
+    <!-- Estilos y fuentes -->
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/input.css" />
+    <link rel="stylesheet" href="/css/output.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    <link rel="icon" href="/assets/Ollama_dark.svg" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+
+    <!-- Fondo animado -->
+    <style>
+      #particles-js {
+        background-color: black;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: -10000;
+      }
+    </style>
+
+    <!-- Datos estructurados -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Johan Bohorquez",
+        "url": "https://www.johanbodev.online",
+        "logo": "https://www.johanbodev.online/assets/Ollama_dark.svg"
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Fondo animado -->
+    <div id="particles-js"></div>
+    <Header />
+    <slot />
+    <Footer />
+    <script src="/js/particles.min.js" defer ></script>
+    <script src="/js/app.js" defer></script>
+    <script src="/js/slider.js" defer></script>
+    <script src="/js/init-particles.js" defer></script>
+    <script src="/js/menu.js" defer></script>
+  </body>
+</html>
