@@ -58,7 +58,7 @@ export const proyectos = [
     imagen: "assets/img/byterrenosSecc.webp",
     tecnologias: ["astro", "tailwind", "react"],
     github: "https://github.com/JohanBoDev/by-terrenos",
-    demo: "by-terrenos.vercel.app",
+    demo: "https://by-terrenos.vercel.app/",
     tipo: "Landing",
   },
   {
@@ -71,7 +71,7 @@ export const proyectos = [
     imagen: "assets/img/shesmanSecc.webp",
     tecnologias: ["astro", "tailwind", "react"],
     github: "https://github.com/JohanBoDev/perfumeriaWeb",
-    demo: "https://perfumeriashesman.netlify.app/",
+    demo: "https://www.shesmanperfumes.com/",
     tipo: "Landing",
   },
   {
@@ -83,7 +83,7 @@ export const proyectos = [
     descripcion2: "La aplicación emplea React con manejo de estados y props...",
     imagen: "assets/img/pruebareactSecc.webp",
     tecnologias: ["react", "tailwind"],
-    demo: "crud-productos-react.vercel.app",
+    demo: "https://crud-productos-react.vercel.app/",
     github: "https://github.com/JohanBoDev/crud-productos-react",
     tipo: "prueba-tecnica",
   },
