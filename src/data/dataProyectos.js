@@ -8,7 +8,7 @@ export const proyectos = [
     imagen: "assets/img/comunitechSecc.webp",
     tecnologias: ["react", "tailwind", "node", "express", "mysql"],
     github: "https://github.com/JohanBoDev/comunitech",
-    demo: "https://comunitech.vercel.app/",
+    demo: "https://comuni-tech.vercel.app/",
     tipo: "FullStack",
   },
   {
@@ -73,7 +73,19 @@ export const proyectos = [
     github: "https://github.com/JohanBoDev/perfumeriaWeb",
     demo: "https://www.shesmanperfumes.com/",
     tipo: "Landing",
-  },
+  },{
+  slug: "tutorlabs",
+  titulo: "TutorLabs",
+  descripcionCorta: "Plataforma de tutorías en línea para estudiantes y tutores con gestión de sesiones y asignaturas.",
+  imagenBanner: "assets/img/TutorLabs.webp",
+  descripcion: "TutorLabs es una plataforma web desarrollada para facilitar la conexión entre estudiantes y tutores. Permite gestionar usuarios, asignaturas y sesiones de tutoría de manera centralizada, brindando paneles personalizados y una experiencia fluida.",
+  descripcion2: "Desarrollada con React, Tailwind y Node.js, esta plataforma cuenta con autenticación JWT, paneles de control por rol, una API REST y una interfaz intuitiva. El sistema permite registrar estudiantes, tutores y admins, y agendar sesiones según asignaturas específicas.",
+  imagen: "assets/img/tutorlabs_proyecto.webp",
+  tecnologias: ["react", "tailwind", "javascript", "node", "express", "mysql", "jwt"],
+  github: "https://github.com/JohanBoDev/TutorLabs/",
+  demo: "https://plataforma-tutorlabs.vercel.app",
+  tipo: "fullstack"
+},
   {
     slug: "prueba-tecnica-react",
     titulo: "Prueba Técnica de React",
@@ -147,22 +159,10 @@ export const proyectos = [
   imagen: "assets/img/gestortareasSecc.png",
   tecnologias: ["react", "tailwind", "node", "express", "postgresql"],
   github: "https://github.com/JohanBoDev/gestor-tareas",
-  web: "https://gestor-tareas-nu.vercel.app",
+  demo: "https://gestor-tareas-nu.vercel.app",
   tipo: "fullstack"
 },
-{
-  slug: "tutorlabs",
-  titulo: "TutorLabs",
-  descripcionCorta: "Plataforma de tutorías en línea para estudiantes y tutores con gestión de sesiones y asignaturas.",
-  imagenBanner: "assets/img/TutorLabs.webp",
-  descripcion: "TutorLabs es una plataforma web desarrollada para facilitar la conexión entre estudiantes y tutores. Permite gestionar usuarios, asignaturas y sesiones de tutoría de manera centralizada, brindando paneles personalizados y una experiencia fluida.",
-  descripcion2: "Desarrollada con React, Tailwind y Node.js, esta plataforma cuenta con autenticación JWT, paneles de control por rol, una API REST y una interfaz intuitiva. El sistema permite registrar estudiantes, tutores y admins, y agendar sesiones según asignaturas específicas.",
-  imagen: "assets/img/tutorlabs_proyecto.webp",
-  tecnologias: ["react", "tailwind", "javascript", "node", "express", "mysql", "jwt"],
-  github: "https://github.com/JohanBoDev/TutorLabs/",
-  web: "https://plataforma-tutorlabs.vercel.app",
-  tipo: "fullstack"
-},
+
 {
   slug: "crud-usuarios-java",
   titulo: "CRUD Usuarios Java",
