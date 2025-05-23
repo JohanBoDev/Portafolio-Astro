@@ -2,6 +2,8 @@
 // src/layouts/Layout.astro
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import "../styles/global.css";   // Aquí debe ir @tailwind base, components, utilities
+import "../../public/css/styles.css"; // si está fuera de `src`, ajústalo así
 ---
 
 <!doctype html>
@@ -38,11 +40,7 @@ import Footer from "../components/Footer.astro";
     <title>Portafolio | Johan Bohorquez - Desarrollador Web</title>
 
     <!-- Estilos y fuentes -->
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/input.css" />
-    <link rel="stylesheet" href="/css/output.css" />
-    <link rel="stylesheet" href="/css/responsive.css" />
-    <link rel="stylesheet" href="/src/styles/global.css" />
+
     <link rel="icon" href="/assets/Ollama_dark.svg" type="image/x-icon" />
     <link
       rel="stylesheet"
@@ -83,7 +81,7 @@ import Footer from "../components/Footer.astro";
     <Header />
     <slot />
     <Footer />
-    <script src="/js/particles.min.js" defer ></script>
+    <script src="/js/particles.min.js" defer></script>
     <script src="/js/app.js" defer></script>
     <script src="/js/slider.js" defer></script>
     <script src="/js/init-particles.js" defer></script>

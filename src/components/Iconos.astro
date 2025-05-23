@@ -1,11 +1,11 @@
 ---
 export interface Props {
   nombre: string;
-  tamaño?: number; // opcional
+  clase?: string;
 }
 
-const { nombre, tamaño = 60 } = Astro.props;
-const size = `${tamaño}px`;
+const { nombre, clase = "w-10 h-10 md:w-[60px] md:h-[60px]" } = Astro.props;
+
 ---
 
 {
@@ -13,9 +13,7 @@ const size = `${tamaño}px`;
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 452 520"
-      width={size}
-      height={size}
-      class="hover-illuminate hover-illuminate-html"
+      class={`hover-illuminate hover-illuminate-html ${clase}`}
     >
       <path fill="#e34f26" d="M41 460L0 0h451l-41 460-185 52" />
       <path fill="#ef652a" d="M226 472l149-41 35-394H226" />
@@ -36,9 +34,7 @@ const size = `${tamaño}px`;
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 452 520"
-      width={size}
-      height={size}
-      class="hover-illuminate-css hover-illuminate"
+      class={`hover-illuminate hover-illuminate-css ${clase}`}
     >
       <path fill="#0c73b8" d="M41 460L0 0h451l-41 460-185 52" />
       <path fill="#30a9dc" d="M226 472l149-41 35-394H226" />
@@ -58,11 +54,9 @@ const size = `${tamaño}px`;
   nombre === "tailwind" && (
     <svg
       viewBox="0 0 256 154"
-      width={size}
-      height={size}
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid"
-      class="hover-illuminate-tailwind hover-illuminate"
+      class={`hover-illuminate hover-illuminate-tailwind ${clase}`}
     >
       <defs>
         <linearGradient
@@ -88,11 +82,9 @@ const size = `${tamaño}px`;
   nombre === "javascript" && (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={size}
-      height={size}
       viewBox="0 0 1052 1052"
-      class="hover-illuminate-js hover-illuminate"
-    >
+      class={`hover-illuminate hover-illuminate-js ${clase}`}
+      preserveAspectRatio="xMidYMid">
       <path fill="#f0db4f" d="M0 0h1052v1052H0z" />
       <path
         d="M965.9 801.1c-7.7-48-39-88.3-131.7-125.9-32.2-14.8-68.1-25.399-78.8-49.8-3.8-14.2-4.3-22.2-1.9-30.8 6.9-27.9 40.2-36.6 66.6-28.6 17 5.7 33.1 18.801 42.8 39.7 45.4-29.399 45.3-29.2 77-49.399-11.6-18-17.8-26.301-25.4-34-27.3-30.5-64.5-46.2-124-45-10.3 1.3-20.699 2.699-31 4-29.699 7.5-58 23.1-74.6 44-49.8 56.5-35.6 155.399 25 196.1 59.7 44.8 147.4 55 158.6 96.9 10.9 51.3-37.699 67.899-86 62-35.6-7.4-55.399-25.5-76.8-58.4-39.399 22.8-39.399 22.8-79.899 46.1 9.6 21 19.699 30.5 35.8 48.7 76.2 77.3 266.899 73.5 301.1-43.5 1.399-4.001 10.6-30.801 3.199-72.101zm-394-317.6h-98.4c0 85-.399 169.4-.399 254.4 0 54.1 2.8 103.7-6 118.9-14.4 29.899-51.7 26.2-68.7 20.399-17.3-8.5-26.1-20.6-36.3-37.699-2.8-4.9-4.9-8.7-5.601-9-26.699 16.3-53.3 32.699-80 49 13.301 27.3 32.9 51 58 66.399 37.5 22.5 87.9 29.4 140.601 17.3 34.3-10 63.899-30.699 79.399-62.199 22.4-41.3 17.6-91.3 17.4-146.6.5-90.2 0-180.4 0-270.9z"
@@ -108,9 +100,7 @@ const size = `${tamaño}px`;
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid"
       viewBox="0 0 256 256"
-      width={size}
-      height={size}
-      class="hover-illuminate-git hover-illuminate"
+      class={`hover-illuminate hover-illuminate-git ${clase}`}
     >
       <path
         d="M251.17 116.6 139.4 4.82a16.49 16.49 0 0 0-23.31 0l-23.21 23.2 29.44 29.45a19.57 19.57 0 0 1 24.8 24.96l28.37 28.38a19.61 19.61 0 1 1-11.75 11.06L137.28 95.4v69.64a19.62 19.62 0 1 1-16.13-.57V94.2a19.61 19.61 0 0 1-10.65-25.73L81.46 39.44 4.83 116.08a16.49 16.49 0 0 0 0 23.32L116.6 251.17a16.49 16.49 0 0 0 23.32 0l111.25-111.25a16.5 16.5 0 0 0 0-23.33"
@@ -124,12 +114,10 @@ const size = `${tamaño}px`;
   nombre === "github" && (
     <svg
       viewBox="0 0 256 250"
-      width={size}
-      height={size}
       fill="#fff"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid"
-      class="hover-illuminate-github hover-illuminate"
+      class={`hover-illuminate hover-illuminate-github ${clase}`}
     >
       <path d="M128.001 0C57.317 0 0 57.307 0 128.001c0 56.554 36.676 104.535 87.535 121.46 6.397 1.185 8.746-2.777 8.746-6.158 0-3.052-.12-13.135-.174-23.83-35.61 7.742-43.124-15.103-43.124-15.103-5.823-14.795-14.213-18.73-14.213-18.73-11.613-7.944.876-7.78.876-7.78 12.853.902 19.621 13.19 19.621 13.19 11.417 19.568 29.945 13.911 37.249 10.64 1.149-8.272 4.466-13.92 8.127-17.116-28.431-3.236-58.318-14.212-58.318-63.258 0-13.975 5-25.394 13.188-34.358-1.329-3.224-5.71-16.242 1.24-33.874 0 0 10.749-3.44 35.21 13.121 10.21-2.836 21.16-4.258 32.038-4.307 10.878.049 21.837 1.47 32.066 4.307 24.431-16.56 35.165-13.12 35.165-13.12 6.967 17.63 2.584 30.65 1.255 33.873 8.207 8.964 13.173 20.383 13.173 34.358 0 49.163-29.944 59.988-58.447 63.157 4.591 3.972 8.682 11.762 8.682 23.704 0 17.126-.148 30.91-.148 35.126 0 3.407 2.304 7.398 8.792 6.14C219.37 232.5 256 184.537 256 128.002 256 57.307 198.691 0 128.001 0Zm-80.06 182.34c-.282.636-1.283.827-2.194.39-.929-.417-1.45-1.284-1.15-1.922.276-.655 1.279-.838 2.205-.399.93.418 1.46 1.293 1.139 1.931Zm6.296 5.618c-.61.566-1.804.303-2.614-.591-.837-.892-.994-2.086-.375-2.66.63-.566 1.787-.301 2.626.591.838.903 1 2.088.363 2.66Zm4.32 7.188c-.785.545-2.067.034-2.86-1.104-.784-1.138-.784-2.503.017-3.05.795-.547 2.058-.055 2.861 1.075.782 1.157.782 2.522-.019 3.08Zm7.304 8.325c-.701.774-2.196.566-3.29-.49-1.119-1.032-1.43-2.496-.726-3.27.71-.776 2.213-.558 3.315.49 1.11 1.03 1.45 2.505.701 3.27Zm9.442 2.81c-.31 1.003-1.75 1.459-3.199 1.033-1.448-.439-2.395-1.613-2.103-2.626.301-1.01 1.747-1.484 3.207-1.028 1.446.436 2.396 1.602 2.095 2.622Zm10.744 1.193c.036 1.055-1.193 1.93-2.715 1.95-1.53.034-2.769-.82-2.786-1.86 0-1.065 1.202-1.932 2.733-1.958 1.522-.03 2.768.818 2.768 1.868Zm10.555-.405c.182 1.03-.875 2.088-2.387 2.37-1.485.271-2.861-.365-3.05-1.386-.184-1.056.893-2.114 2.376-2.387 1.514-.263 2.868.356 3.061 1.403Z" />
     </svg>
@@ -140,11 +128,9 @@ const size = `${tamaño}px`;
   nombre === "mysql" && (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height={size}
-      width={size}
       preserveAspectRatio="xMidYMid"
       viewBox="0 0 256 252"
-      class="hover-illuminate-mysql hover-illuminate"
+      class={`hover-illuminate hover-illuminate-mysql ${clase}`}
     >
       <path
         d="M236 194c-14 0-25 1-34 5-3 1-7 1-7 4l3 6c2 3 5 8 9 11l11 8 21 10 11 9 6 4-3-6-5-5c-5-7-11-13-18-18-6-3-18-9-20-15h-1l12-3 18-3 8-2v-2l-9-10c-8-8-18-15-28-22l-18-8c-2-1-6-2-7-4l-7-13-15-30-8-20c-18-30-38-48-68-65-6-4-14-5-22-7l-13-1-8-6C34 5 8-9 1 9c-5 11 7 22 11 28l9 13 3 9c3 8 5 17 9 24l6 10c2 2 4 3 5 6-3 4-3 9-4 13-7 20-4 44 5 59 2 4 9 14 18 10 8-3 6-13 8-22l1-4 8 14c5 9 14 18 22 24 4 3 8 8 13 10l-4-4-9-10c-8-10-14-21-20-32l-7-17-3-6c-3 4-7 7-9 12-3 7-3 17-4 26h-1c-6-1-8-7-10-12-5-12-6-32-1-46 1-4 6-15 4-19-1-3-4-5-6-7l-7-12-10-30-9-13c-3-5-7-8-10-14-1-2-2-5 0-7l2-2c2-2 9 0 11 1 6 3 12 5 17 9l8 6h4c6 1 12 0 17 2 9 3 18 7 25 12 23 14 42 35 54 59 3 4 3 8 5 12l12 26c4 8 7 16 12 23 3 4 14 6 18 8l12 4 18 12c2 2 11 7 12 10Z"
@@ -159,9 +145,7 @@ const size = `${tamaño}px`;
   nombre === "react" && (
     <svg
       viewBox="0 0 256 228"
-      width={size}
-      height={size}
-      class="hover-illuminate-react hover-illuminate"
+      class={`hover-illuminate hover-illuminate-react ${clase}`}
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid"
     >
@@ -179,9 +163,7 @@ const size = `${tamaño}px`;
       viewBox="0 0 256 292"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
-      width={size}
-      height={size}
-      class="hover-illuminate-react hover-illuminate"
+      class={`hover-illuminate hover-illuminate-node ${clase}`}
       preserveAspectRatio="xMidYMid"
     >
       <>
@@ -269,9 +251,7 @@ const size = `${tamaño}px`;
   nombre === "nest" && (
     <svg
       viewBox="0 0 264.6 255.6"
-      width={size}
-      height={size}
-      class="hover-illuminate-git hover-illuminate"
+      class={`hover-illuminate hover-illuminate-git ${clase}`}
       preserveAspectRatio="xMidYMid"
       xmlns="http://www.w3.org/2000/svg "
     >
@@ -289,10 +269,8 @@ const size = `${tamaño}px`;
     <svg
       viewBox="0 0 256 366"
       xmlns="http://www.w3.org/2000/svg"
-      width={size}
-      height={size}
       preserveAspectRatio="xMidYMid"
-      class="hover-illuminate-github hover-illuminate"
+      class={`hover-illuminate hover-illuminate-github ${clase}`}
     >
       <>
         <path
@@ -313,9 +291,7 @@ const size = `${tamaño}px`;
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 -1 100 50"
-      width={size}
-      height={size}
-      class="hover-illuminate-php hover-illuminate"
+      class={`hover-illuminate hover-illuminate-php ${clase}`}
     >
       <path
         fill="#fff"
@@ -328,9 +304,7 @@ const size = `${tamaño}px`;
   nombre === "firebase" && (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="hover-illuminate-git hover-illuminate"
-      width={size}
-      height={size}
+      class={`hover-illuminate hover-illuminate-git ${clase}`}
       fill="none"
       viewBox="0 0 600 600"
     >
@@ -360,10 +334,8 @@ const size = `${tamaño}px`;
     <svg
       viewBox="0 0 256 549"
       xmlns="http://www.w3.org/2000/svg"
-      width={size}
-      height={size}
       preserveAspectRatio="xMidYMid"
-      class="hover-illuminate-node hover-illuminate"
+      class={`hover-illuminate hover-illuminate-node ${clase}`}
     >
       <path
         fill="#01EC64"
@@ -377,9 +349,7 @@ const size = `${tamaño}px`;
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 32 32"
-      class="hover-illuminate-github hover-illuminate"
-      width={size}
-      height={size}
+      class={`hover-illuminate hover-illuminate-github ${clase}`}
       preserveAspectRatio="xMidYMid"
     >
       <path
@@ -396,9 +366,7 @@ const size = `${tamaño}px`;
       xmlns="http://www.w3.org/2000/svg"
       xml:space="preserve"
       viewBox="0 0 432.071 445.383"
-      width={size}
-      height={size}
-      class="hover-illuminate-react hover-illuminate"
+      class={`hover-illuminate hover-illuminate-react ${clase}`}
     >
       <g style="fill-rule:nonzero;clip-rule:nonzero;fill:none;stroke:#fff;stroke-width:12.4651;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4">
         <>
@@ -439,9 +407,7 @@ const size = `${tamaño}px`;
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="#008fe2"
-      width={size}
-      height={size}
-      class="hover-illuminate-react hover-illuminate"
+      class={`hover-illuminate hover-illuminate-react ${clase}`}
     >
       <path d="M13.98 11.08h2.12a.19.19 0 0 0 .19-.19V9.01a.19.19 0 0 0-.19-.19h-2.12a.18.18 0 0 0-.18.18v1.9c0 .1.08.18.18.18m-2.95-5.43h2.12a.19.19 0 0 0 .18-.19V3.57a.19.19 0 0 0-.18-.18h-2.12a.18.18 0 0 0-.19.18v1.9c0 .1.09.18.19.18m0 2.71h2.12a.19.19 0 0 0 .18-.18V6.29a.19.19 0 0 0-.18-.18h-2.12a.18.18 0 0 0-.19.18v1.89c0 .1.09.18.19.18m-2.93 0h2.12a.19.19 0 0 0 .18-.18V6.29a.18.18 0 0 0-.18-.18H8.1a.18.18 0 0 0-.18.18v1.89c0 .1.08.18.18.18m-2.96 0h2.11a.19.19 0 0 0 .19-.18V6.29a.18.18 0 0 0-.19-.18H5.14a.19.19 0 0 0-.19.18v1.89c0 .1.08.18.19.18m5.89 2.72h2.12a.19.19 0 0 0 .18-.19V9.01a.19.19 0 0 0-.18-.19h-2.12a.18.18 0 0 0-.19.18v1.9c0 .1.09.18.19.18m-2.93 0h2.12a.18.18 0 0 0 .18-.19V9.01a.18.18 0 0 0-.18-.19H8.1a.18.18 0 0 0-.18.18v1.9c0 .1.08.18.18.18m-2.96 0h2.11a.18.18 0 0 0 .19-.19V9.01a.18.18 0 0 0-.18-.19H5.14a.19.19 0 0 0-.19.19v1.88c0 .1.08.19.19.19m-2.92 0h2.12a.18.18 0 0 0 .18-.19V9.01a.18.18 0 0 0-.18-.19H2.22a.18.18 0 0 0-.19.18v1.9c0 .1.08.18.19.18m21.54-1.19c-.06-.05-.67-.51-1.95-.51-.34 0-.68.03-1.01.09a3.77 3.77 0 0 0-1.72-2.57l-.34-.2-.23.33a4.6 4.6 0 0 0-.6 1.43c-.24.97-.1 1.88.4 2.66a4.7 4.7 0 0 1-1.75.42H.76a.75.75 0 0 0-.76.75 11.38 11.38 0 0 0 .7 4.06 6.03 6.03 0 0 0 2.4 3.12c1.18.73 3.1 1.14 5.28 1.14.98 0 1.96-.08 2.93-.26a12.25 12.25 0 0 0 3.82-1.4 10.5 10.5 0 0 0 2.61-2.13c1.25-1.42 2-3 2.55-4.4h.23c1.37 0 2.21-.55 2.68-1 .3-.3.55-.66.7-1.06l.1-.28Z" />
     </svg>
@@ -452,11 +418,9 @@ const size = `${tamaño}px`;
   nombre === "postman" && (
     <svg
       viewBox="0 0 256 256"
-      width={size}
-      height={size}
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid"
-      class="hover-illuminate-git hover-illuminate"
+      class={`hover-illuminate hover-illuminate-html ${clase}`}
     >
       <>
         <path
@@ -546,9 +510,7 @@ const size = `${tamaño}px`;
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid"
       viewBox="0 0 190.5 190.5"
-      width={size}
-      height={size}
-      class="hover-illuminate-react hover-illuminate"
+      class={`hover-illuminate hover-illuminate-html ${clase}`}
     >
       <>
         <path
@@ -581,9 +543,7 @@ const size = `${tamaño}px`;
     <svg
       viewBox="0 0 96 96"
       xmlns="http://www.w3.org/2000/svg"
-      width={size}
-      height={size}
-      class="hover-illuminate-react hover-illuminate"
+      class={`hover-illuminate hover-illuminate-react ${clase}`}
     >
       <defs>
         <linearGradient
@@ -652,9 +612,7 @@ const size = `${tamaño}px`;
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 100 100"
-      width={size}
-      height={size}
-      class="hover-illuminate-git hover-illuminate"
+      class={`hover-illuminate hover-illuminate-git ${clase}`}
     >
       <>
         <circle cx="50" cy="50" r="45" fill="#f47421" />
@@ -685,9 +643,7 @@ const size = `${tamaño}px`;
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid"
       viewBox="0 0 256 346"
-      width={size}
-      height={size}
-      class="hover-illuminate-github hover-illuminate"
+      class={`hover-illuminate hover-illuminate-github ${clase}`}
     >
       <path
         d="M83 267s-14 8 9 11c27 3 41 2 71-3 0 0 8 5 19 9-67 29-153-2-99-17M74 230s-15 11 8 13c29 3 52 3 92-4 0 0 6 5 15 8-82 24-173 2-115-17"

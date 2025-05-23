@@ -1,26 +1,35 @@
 const mobileMenuButton = document.getElementById("mobile-menu-button");
 const mobileMenu = document.getElementById("mobile-menu");
-const botonContacto = document.getElementById("contactame");
+const iconoMenu = document.getElementById("icono-menu");
 
+// Abrir/cerrar menú
 function toggleMenu() {
-  mobileMenu.classList.toggle("show");
+  const abierto = mobileMenu.classList.contains("block-nav");
 
-  if (mobileMenu.classList.contains("show")) {
-    botonContacto && (botonContacto.style.zIndex = "-1");
-    document.body.style.overflow = "hidden";
-  } else {
-    botonContacto && (botonContacto.style.zIndex = "0");
+  if (abierto) {
+    mobileMenu.classList.remove("block-nav");
+    mobileMenu.classList.add("hidden-nav");
+    iconoMenu.classList.remove("fa-times");
+    iconoMenu.classList.add("fa-bars");
     document.body.style.overflow = "auto";
+  } else {
+    mobileMenu.classList.remove("hidden-nav");
+    mobileMenu.classList.add("block-nav");
+    iconoMenu.classList.remove("fa-bars");
+    iconoMenu.classList.add("fa-times");
+    document.body.style.overflow = "hidden";
   }
 }
 
 mobileMenuButton?.addEventListener("click", toggleMenu);
 
-const menuLinks = mobileMenu?.querySelectorAll("a");
-menuLinks?.forEach((link) => {
+// Cerrar menú al hacer clic en un enlace
+mobileMenu?.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
-    mobileMenu.classList.remove("show");
-    botonContacto && (botonContacto.style.zIndex = "0");
+    mobileMenu.classList.remove("block-nav");
+    mobileMenu.classList.add("hidden-nav");
+    iconoMenu.classList.remove("fa-times");
+    iconoMenu.classList.add("fa-bars");
     document.body.style.overflow = "auto";
   });
 });

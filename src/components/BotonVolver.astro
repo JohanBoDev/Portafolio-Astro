@@ -1,8 +1,12 @@
 <div class="boton-volver fixed top-4 right-5 z-50">
   <a
     href="/"
-    class="bg-white text-black font-bold py-2 px-4 rounded-full hover:bg-black hover:text-white transition duration-300"
+    class="bg-white text-black font-bold py-2 px-4 rounded-full hover:bg-black hover:text-white transition duration-300 flex items-center justify-center gap-2"
   >
-    Volver
+    <!-- Icono solo en móvil -->
+    <i class="fas fa-arrow-left md:hidden"></i>
+
+    <!-- Texto solo en desktop -->
+    <span class="hidden md:inline">Volver</span>
   </a>
 </div>

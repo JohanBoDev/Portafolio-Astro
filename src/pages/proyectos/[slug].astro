@@ -54,7 +54,7 @@ const { proyecto } = Astro.props;
                   target="_blank"
                   aria-label="Código fuente en GitHub"
                 >
-                  <Iconos nombre="github" tamaño={30} />
+                  <Iconos nombre="github" clase="w-6 h-6 md:w-8 md:h-8"/>
                 </a>
               )
             }
@@ -66,7 +66,7 @@ const { proyecto } = Astro.props;
                   target="_blank"
                   aria-label="Demo del proyecto"
                 >
-                  <Iconos nombre="chrome" tamaño={30} />
+                  <Iconos nombre="chrome" clase="w-6 h-6 md:w-8 md:h-8" />
                 </a>
               )
             }
@@ -83,7 +83,7 @@ const { proyecto } = Astro.props;
           <div class="flex flex-wrap gap-5 mt-4">
             {
               proyecto.tecnologias.map((tec) => (
-                <Iconos nombre={tec} tamaño={36} />
+                <Iconos nombre={tec} clase="w-6 h-6 md:w-8 md:h-8" />
               ))
             }
           </div>
