@@ -39,6 +39,7 @@
 
 html{
   scroll-behavior: smooth;
+  scrollbar-width:none;
 }
 
 section {
@@ -589,7 +590,7 @@ body {
   gap: 30px 80px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1650px) {
   .tecnologias {
     grid-template-columns: repeat(6, 1fr);
     gap: 24px 40px;
